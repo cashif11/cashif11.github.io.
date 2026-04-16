@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MASTER | AYRA UNIVERSE</title>
+    <style>
+        :root {
+            --bg-color: #0a0a0a;
+            --text-color: #00ff41;
+            --accent-color: #008f11;
+            --dim-color: #003b00;
+        }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Courier New', Courier, monospace;
+            padding: 20px;
+            line-height: 1.6;
+            margin: 0;
+        }
+        .container { max-width: 800px; margin: auto; padding: 20px; }
+        header { border-bottom: 2px solid var(--accent-color); padding-bottom: 20px; margin-bottom: 20px; }
+        .glitch { font-weight: bold; text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; }
+        h1 { margin: 10px 0; font-size: 2.2rem; }
+        h2 { color: #fff; border-left: 4px solid var(--text-color); padding-left: 10px; margin-top: 40px; text-transform: uppercase; }
+        
+        /* Live Status Pulse */
+        .pulse-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+        .pulse-dot {
+            width: 10px;
+            height: 10px;
+            background-color: #00ff41;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #00ff41;
+            animation: pulse-animation 2s infinite;
+        }
+        @keyframes pulse-animation {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 255, 65, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(0, 255, 65, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 255, 65, 0); }
+        }
+        #live-clock { color: #fff; font-weight: bold; }
+
+        .cmd { color: #fff; margin-right: 10px; font-weight: bold; }
+        .project-card { border: 1px solid var(--dim-color); padding: 15px; margin: 20px 0; background: #000a00; border-left: 4px solid var(--accent-color); }
+        .status-on { color: #00ff41; font-weight: bold; }
+        
+        ul { list-style: none; padding: 0; }
+        li { margin-bottom: 10px; }
+        li::before { content: "> "; color: var(--accent-color); }
+
+        footer { margin-top: 50px; font-size: 0.8rem; border-top: 1px solid var(--dim-color); padding-top: 20px; opacity: 0.6; }
+        a { color: #fff; text-decoration: none; border-bottom: 1px dashed var(--text-color); }
+        a:hover { background: var(--text-color); color: #000; }
+
+        @keyframes blink { 50% { opacity: 0; } }
+        .cursor { animation: blink 1s step-end infinite; font-weight: bold; color: var(--text-color); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="glitch">SYS_ACCESS: GRANTED // LOG_ID: MASTER</div>
+            <h1>MASTER // AYRA_CORE</h1>
+            <div class="pulse-container">
+                <div class="pulse-dot"></div>
+                <span>AYRA_CORE: <span class="status-on">STABLE</span></span>
+                <span style="margin-left: 15px;">|</span>
+                <span style="margin-left: 15px;">SYS_TIME: <span id="live-clock">00:00:00</span></span>
+            </div>
+            <p style="margin-top: 15px; opacity: 0.8;">Location: Sahiwal, PK | Node: Vivo_Device_Primary</p>
+        </header>
+
+        <section id="bio">
+            <span class="cmd">MASTER@UNIVERSE:~$</span><span class="typewriter">whoami</span>
+            <p>Systems Architect & Android Developer. Engineering decentralized AI automation and low-level system sovereignty. Currently developing the <strong>Sovereign Stack</strong>.</p>
+        </section>
+
+        <section id="projects">
+            <h2><span class="cmd">></span> CORE_INITIATIVES</h2>
+            
+            <div class="project-card">
+                <h3>PROJECT: AYRA v4</h3>
+                <p>Autonomous AI orchestration layer. Features localized <strong>GemmaEngine.kt</strong> integration for air-gapped reasoning and Shizuku-based system control.</p>
+            </div>
+
+            <div class="project-card">
+                <h3>HYDRA ARCHITECTURE</h3>
+                <p>Decentralized P2P mesh network protocol. Engineered for persistent multi-device presence and redundant shadow-node deployment.</p>
+            </div>
+        </section>
+
+        <section id="stack">
+            <h2><span class="cmd">></span> TECH_STACK</h2>
+            <ul>
+                <li><strong>Languages:</strong> Kotlin, Java, Bash (Automation)</li>
+                <li><strong>Android:</strong> Shizuku, Wireless ADB, AIDE, Room DB</li>
+                <li><strong>AI:</strong> On-device LLM, Self-Learning Logic Pipelines</li>
+            </ul>
+        </section>
+
+        <footer>
+            <p>© 2026 MASTER. SYSTEM IS SECURE. <span class="cursor">_</span></p>
+        </footer>
+    </div>
+
+    <script>
+        // Real-time System Clock
+        function updateClock() {
+            const now = new Date();
+            const timeStr = now.getHours().toString().padStart(2, '0') + ":" + 
+                            now.getMinutes().toString().padStart(2, '0') + ":" + 
+                            now.getSeconds().toString().padStart(2, '0');
+            document.getElementById('live-clock').innerText = timeStr;
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
+</body>
+  </html>
+              
